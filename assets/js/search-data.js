@@ -470,12 +470,12 @@ ninja.data = [{
               window.location.href = "/projects/9_project/";
             },},{id: "teaching-cse-290-190",
           title: 'CSE 290/190',
-          description: "with background image",
+          description: "AI News Roundup",
           section: "Teaching",handler: () => {
               window.location.href = "/teaching/1_cse190/";
             },},{id: "teaching-cse-227",
           title: 'CSE 227',
-          description: "with background image",
+          description: "Graduate Computer Security",
           section: "Teaching",handler: () => {
               window.location.href = "/teaching/2_cse227/";
             },},{
