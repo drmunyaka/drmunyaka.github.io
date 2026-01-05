@@ -468,16 +468,16 @@ ninja.data = [{
           description: "another project with an image 🎉",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
-            },},{id: "teaching-cse-290-190",
-          title: 'CSE 290/190',
+            },},{id: "teaching-cse-290-191",
+          title: 'CSE 290/191',
           description: "AI News Roundup",
           section: "Teaching",handler: () => {
-              window.location.href = "/teaching/1_cse190/";
+              window.location.href = "/teaching/wi26cse191/";
             },},{id: "teaching-cse-227",
           title: 'CSE 227',
           description: "Graduate Computer Security",
           section: "Teaching",handler: () => {
-              window.location.href = "/teaching/2_cse227/";
+              window.location.href = "/teaching/wi26cse227/";
             },},{
         id: 'social-cv',
         title: 'CV',
