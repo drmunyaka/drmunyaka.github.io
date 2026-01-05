@@ -4,7 +4,7 @@ title: teaching
 permalink: /teaching/
 description: Course Links
 nav: true
-nav_order: 6
+nav_order: 2
 display_categories: [WI26, FA25]
 horizontal: false
 ---
