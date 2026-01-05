@@ -6,7 +6,7 @@ subtitle: <a href='#'>Affiliations</a>. Be Best.
 
 profile:
   align: right
-  image: prof_pic2.jpg
+  image: prof_pic2.png
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>3220 in CSE</p>
