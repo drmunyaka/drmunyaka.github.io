@@ -7,8 +7,9 @@ nav: true
 nav_order: 6
 ---
 Workshop Links
-- https://gandalf.lakera.ai/baseline
-- https://drive.google.com/file/d/1ILJKiwgs-oqYeAEpmrjcyk-Ca_mHcRe_/view?usp=sharing
+- [ONE](https://docs.google.com/forms/d/e/1FAIpQLSdDQipp4FSlNhK1qiDsuuBxScB1KqcBTGOF45fYBJ8G6W6y7A/viewform)
+- [TWO](https://gandalf.lakera.ai/baseline)
+- [THREE](https://drive.google.com/file/d/1ILJKiwgs-oqYeAEpmrjcyk-Ca_mHcRe_/view?usp=sharing)
 
 Learn Online Safety w/ Games:
 - https://beinternetawesome.withgoogle.com/en_us/interland/
