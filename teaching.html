@@ -8,161 +8,77 @@
   <link rel="icon" href="assets/profile.png"/>
   <link rel="stylesheet" href="assets/style.css"/>
   <style>
+    /* ── Active course card ── */
     .course-card {
       background: var(--white);
       border: 1px solid var(--border);
       border-radius: 10px;
       overflow: hidden;
-      margin-bottom: 32px;
+      margin-bottom: 24px;
       transition: box-shadow 0.2s;
     }
     .course-card:hover { box-shadow: 0 4px 20px rgba(125,216,85,0.15); }
 
     .course-header {
-      padding: 24px 28px;
+      padding: 22px 28px;
       border-bottom: 1px solid var(--border);
       display: flex; justify-content: space-between;
       align-items: flex-start; gap: 16px; flex-wrap: wrap;
     }
-
     .course-code {
       font-family: 'Outfit', sans-serif;
-      font-size: 22px; font-weight: 800;
-      color: var(--black); margin-bottom: 4px;
+      font-size: 20px; font-weight: 800;
+      color: var(--black); margin-bottom: 3px;
     }
-
     .course-title {
-      font-size: 14px; font-weight: 600;
-      color: var(--green-dark); margin-bottom: 4px;
+      font-size: 13px; font-weight: 600;
+      color: var(--green-dark);
     }
-
-    .course-meta {
-      font-size: 13px; color: var(--muted);
+    .course-body {
+      padding: 22px 28px;
     }
-
-    .course-body { padding: 24px 28px; }
-
     .course-desc {
       font-size: 14px; color: var(--muted);
-      line-height: 1.85; margin-bottom: 20px;
+      line-height: 1.85; margin-bottom: 18px;
     }
 
-    .course-details {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 12px; margin-bottom: 20px;
+    /* ── Archive section ── */
+    .term-block {
+      margin-bottom: 32px;
     }
-
-    .detail-item {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 10px 14px;
-    }
-
-    .detail-label {
-      font-size: 10px; font-weight: 700;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--green-dark); margin-bottom: 3px;
-    }
-
-    .detail-value {
-      font-size: 13px; color: var(--black);
-    }
-
-    .eval-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 12px; margin: 16px 0 20px;
-    }
-
-    .eval-item {
-      background: rgba(125,216,85,0.08);
-      border: 1.5px solid var(--border-green);
-      border-radius: 8px; padding: 16px;
-      text-align: center;
-    }
-
-    .eval-pct {
+    .term-label {
       font-family: 'Outfit', sans-serif;
-      font-size: 28px; font-weight: 800;
-      color: var(--green-dark); line-height: 1;
-      margin-bottom: 4px;
+      font-size: 14px; font-weight: 800;
+      color: var(--black);
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--green);
+      display: inline-block;
     }
-
-    .eval-label {
-      font-size: 12px; font-weight: 600;
-      color: var(--muted);
-    }
-
-    .reading-list {
+    .course-archive-list {
       list-style: none;
-      display: flex; flex-direction: column; gap: 10px;
+      display: flex; flex-direction: column; gap: 6px;
+      margin-top: 10px;
     }
-
-    .reading-item {
-      font-size: 13px; color: var(--muted);
-      padding: 10px 14px;
-      background: var(--bg);
-      border-left: 3px solid var(--green);
-      border-radius: 0 6px 6px 0;
-      line-height: 1.6;
-    }
-    .reading-item a { color: var(--green-dark); text-decoration: underline; }
-
-    .schedule-table {
-      width: 100%; border-collapse: collapse;
-      font-size: 13px; margin-top: 12px;
-    }
-    .schedule-table th {
-      text-align: left; padding: 8px 12px;
-      font-size: 10px; font-weight: 700;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--green-dark);
-      border-bottom: 2px solid var(--border);
-    }
-    .schedule-table td {
-      padding: 10px 12px;
-      border-bottom: 1px solid var(--border);
-      color: var(--muted);
-      vertical-align: top;
-    }
-    .schedule-table tr:last-child td { border-bottom: none; }
-    .schedule-table td:first-child { color: var(--black); font-weight: 600; white-space: nowrap; }
-
-    .hall-of-fame {
-      list-style: none;
-      display: flex; flex-direction: column; gap: 8px;
-    }
-    .hall-item {
-      font-size: 13px; color: var(--muted);
-      padding: 10px 14px;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      line-height: 1.6;
-    }
-
-    details { margin-bottom: 12px; }
-    summary {
-      font-size: 14px; font-weight: 700;
-      color: var(--black); cursor: pointer;
-      padding: 12px 16px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      list-style: none;
-      display: flex; justify-content: space-between; align-items: center;
-    }
-    summary::-webkit-details-marker { display: none; }
-    summary::after { content: '+'; color: var(--green-dark); font-size: 18px; }
-    details[open] summary::after { content: '−'; }
-    details[open] summary { border-radius: 6px 6px 0 0; border-bottom: none; }
-    .details-body {
-      padding: 16px;
-      border: 1px solid var(--border);
-      border-top: none; border-radius: 0 0 6px 6px;
+    .course-archive-list li {
+      font-size: 14px; color: var(--muted);
+      padding: 8px 14px;
       background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      display: flex; align-items: center; gap: 8px;
     }
+    .course-archive-list li::before {
+      content: '';
+      width: 7px; height: 7px;
+      background: var(--green);
+      border-radius: 50%; flex-shrink: 0;
+    }
+    .course-archive-list li a {
+      color: var(--green-dark); text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .course-archive-list li a:hover { color: var(--green-mid); }
   </style>
 </head>
 <body>
@@ -191,229 +107,152 @@
   <div class="page-header">
     <div class="page-tag">Courses</div>
     <h1>Teaching</h1>
-    <p>Courses taught at UC San Diego. For syllabus, readings, and updates please refer to Canvas.</p>
+    <p>Courses taught at UC San Diego. For current course materials, assignments, and updates please refer to Canvas.</p>
   </div>
 
-  <!-- ══════════════════════════════════════════════════════
-       CSE 227 — Graduate Computer Security
-       ══════════════════════════════════════════════════════ -->
+  <!-- ════════════════════════════════════════════════════════
+       CURRENT — Fall 2026
+       ════════════════════════════════════════════════════════ -->
+  <div class="section-label" style="margin-bottom:20px;">Current — Fall 2026</div>
+
+  <!-- CSE 88 -->
   <div class="course-card">
     <div class="course-header">
       <div>
-        <div class="course-code">CSE 227</div>
-        <div class="course-title">Graduate Computer Security</div>
-        <div class="course-meta">Winter 2026 &nbsp;·&nbsp; Tues &amp; Thurs, 11:00am &nbsp;·&nbsp; WLH 2204</div>
+        <div class="course-code">CSE 88</div>
+        <div class="course-title">[Course Title Placeholder]</div>
       </div>
-      <span class="badge">Graduate</span>
+      <span class="badge">Active</span>
     </div>
     <div class="course-body">
-      <p class="course-desc">
-        This course focuses on computer security, exploring a range of topics — from systems security, to web security, edge security, and privacy — to illustrate modern research challenges and standards for advancement. It is not designed as a tutorial course, but rather to give students the context to understand current security research and evaluate their interest in the field. The course examines both the defensive and offensive sides of the field. At the conclusion of the course, students will have the foundation to conduct research in computer security and apply the latest research to a particular area of practice.
-      </p>
-
-      <div class="course-details">
-        <div class="detail-item">
-          <div class="detail-label">Instructor</div>
-          <div class="detail-value">Imani Munyaka, PhD</div>
-        </div>
-        <div class="detail-item">
-          <div class="detail-label">Teaching Assistant</div>
-          <div class="detail-value">Mya Bolds &lt;mbolds@ucsd.edu&gt;</div>
-        </div>
-        <div class="detail-item">
-          <div class="detail-label">Office Hours</div>
-          <div class="detail-value">Schedule via Canvas link</div>
-        </div>
-        <div class="detail-item">
-          <div class="detail-label">Discussion</div>
-          <div class="detail-value">Piazza</div>
-        </div>
-      </div>
-
-      <div class="divider" style="margin: 20px 0;"></div>
-
-      <!-- Evaluation -->
-      <div class="section-label">Evaluation</div>
-      <div class="eval-grid">
-        <div class="eval-item">
-          <div class="eval-pct">35%</div>
-          <div class="eval-label">Participation</div>
-        </div>
-        <div class="eval-item">
-          <div class="eval-pct">65%</div>
-          <div class="eval-label">Research Project</div>
-        </div>
-      </div>
-      <p style="font-size:13px; color:var(--muted); margin-bottom:20px;">
-        Participation requires reading assigned papers before each meeting, a 1-paragraph write-up, and presenting one assigned paper. The research project is completed in groups of 3–5 and culminates in a 6–10 page paper and a 7–10 minute talk. MS students: comprehensive exam does not count toward final grade.
-      </p>
-
-      <a href="https://docs.google.com/document/d/1lqPqNTzkGWwexfTwRjcyvJZ7M2JU5fmOROkaBonnhac/edit?usp=sharing" target="_blank" rel="noopener" class="btn btn-outline" style="margin-bottom:24px;">View Syllabus →</a>
-
-      <div class="divider" style="margin: 20px 0;"></div>
-
-      <!-- Schedule -->
-      <details>
-        <summary>Course Schedule &amp; Readings</summary>
-        <div class="details-body">
-          <table class="schedule-table">
-            <thead><tr><th>Date</th><th>Topic</th><th>Reading</th></tr></thead>
-            <tbody>
-              <tr><td>Tue Jan 6</td><td>Introduction</td><td><a href="https://www.cs.cmu.edu/~rdriley/487/papers/Thompson_1984_ReflectionsonTrustingTrust.pdf" class="text-link" target="_blank">Reflections on Trusting Trust — K. Thompson</a></td></tr>
-              <tr><td>Thu Jan 8</td><td>Low-level vulnerabilities &amp; defenses</td><td><a href="https://ieeexplore.ieee.org/document/6956567" class="text-link" target="_blank">Hacking Blind — A. Bittau et al.</a></td></tr>
-              <tr><td>Tue Jan 13</td><td>Low-level vulnerabilities &amp; defenses</td><td>Hacking Blind (cont.) · AEG: Automatic Exploit Generation</td></tr>
-              <tr><td>Thu Jan 15</td><td>Low-level vulnerabilities &amp; defenses</td><td>AEG: Automatic Exploit Generation</td></tr>
-              <tr><td>Tue Jan 20</td><td>Design Principles</td><td>Preventing Privilege Escalation · Design Principles (Saltzer &amp; Shroefer)</td></tr>
-              <tr><td>Thu Jan 22</td><td>Usable Security</td><td>An empirical study of cryptographic misuse in android applications</td></tr>
-              <tr><td>Tue Jan 27</td><td>OS Security</td><td>seL4: Formal Verification of an OS Kernel</td></tr>
-              <tr><td>Thu Jan 29</td><td>OS Security</td><td>Language Support for Fast and Reliable Message-based Communication in Singularity OS</td></tr>
-              <tr><td>Tue Feb 3</td><td>OS Security</td><td>Firecracker: Lightweight Virtualization for Serverless Applications</td></tr>
-              <tr><td>Thu Feb 5</td><td>Web-server Security</td><td>Building Secure High-Performance Web Services with OKWS</td></tr>
-              <tr><td>Fri Feb 6</td><td colspan="2">Status Update — Project Plan</td></tr>
-              <tr><td>Tue Feb 10</td><td>Web-server Security</td><td>Hails: Protecting Data Privacy in Untrusted Web Applications</td></tr>
-              <tr><td>Thu Feb 12</td><td>Web-server Security</td><td>Edna: Disguising and Revealing User Data in Web Applications</td></tr>
-              <tr><td>Fri Feb 13</td><td colspan="2">Status Update — Project Plan Update</td></tr>
-              <tr><td>Tue Feb 17</td><td>Privacy, Wireless, Accessibility, Differential Privacy (Async)</td><td>Optional readings on Canvas</td></tr>
-              <tr><td>Thu Feb 19</td><td>Hardware Security (Virtual)</td><td>Efficiently Mitigating Transient Execution Attacks</td></tr>
-              <tr><td>Fri Feb 20</td><td colspan="2">Status Update — Project Plan Update</td></tr>
-              <tr><td>Tue Feb 24</td><td>LLM Attacks</td><td>Extracting Training Data from Large Language Models</td></tr>
-              <tr><td>Thu Feb 26</td><td>Hardware Security</td><td>SoK: Understanding Design Choices of Trusted Execution Environments</td></tr>
-              <tr><td>Fri Feb 27</td><td colspan="2">Status Update — Project Paper Outline</td></tr>
-              <tr><td>Tue Mar 3</td><td>LLM Defenses</td><td>A Survey on Model Extraction Attacks and Defenses for LLMs</td></tr>
-              <tr><td>Thu Mar 5</td><td colspan="2"><strong>Final Presentations</strong></td></tr>
-              <tr><td>Fri Mar 6</td><td colspan="2">Status Update — Project Paper Draft for Peer Review</td></tr>
-              <tr><td>Tue Mar 10</td><td colspan="2"><strong>Final Presentations</strong></td></tr>
-              <tr><td>Thu Mar 12</td><td colspan="2">MS Comprehensive Exam / No Class</td></tr>
-              <tr><td>Fri Mar 13</td><td colspan="2">Peer Review Due</td></tr>
-              <tr><td>Tue Mar 17</td><td colspan="2"><strong>Final Project Paper Due</strong></td></tr>
-            </tbody>
-          </table>
-        </div>
-      </details>
-
-      <!-- Project Ideas -->
-      <details>
-        <summary>Project Ideas</summary>
-        <div class="details-body">
-          <p style="font-size:13px; color:var(--muted); margin-bottom:12px;">You are encouraged to come up with your own idea. Some starter questions from a usable privacy and security perspective:</p>
-          <ul style="list-style:none; display:flex; flex-direction:column; gap:8px;">
-            <li class="reading-item">Literature review (SOK papers accepted — must use NLP/mixed methods technique)</li>
-            <li class="reading-item">Privacy pop-ups and the end user response</li>
-            <li class="reading-item">Security analysis of free tools for tracking flights</li>
-            <li class="reading-item">How have AI privacy notices and terms changed over the last few years?</li>
-            <li class="reading-item">How are GenAI video creators negotiating privacy?</li>
-            <li class="reading-item">How are everyday social media users negotiating privacy re: GenAI and personal image?</li>
-            <li class="reading-item">How is open source intelligence used on TikTok? What educational initiatives might support those being found?</li>
-            <li class="reading-item">How has GenAI impacted cybercrime? What solutions have prevailed?</li>
-            <li class="reading-item">What can cybersecurity professionals learn from physical security professionals?</li>
-          </ul>
-          <p style="font-size:13px; color:var(--muted); margin-top:12px;">Also see: <a href="https://cseweb.ucsd.edu//classes/fa21/cse227-a/projects.html" class="text-link" target="_blank">Stefan's project ideas</a> · <a href="https://plsyssec.github.io/cse227-spring25/#projectideas" class="text-link" target="_blank">Deian's project ideas</a></p>
-        </div>
-      </details>
-
-      <!-- Hall of Fame -->
-      <details>
-        <summary>Hall of Fame — Papers from CSE 227 Projects</summary>
-        <div class="details-body">
-          <ul class="hall-of-fame">
-            <li class="hall-item">CoResident Evil: Covert Communications in the Cloud with Lambdas — Yelam et al., WWW 2021</li>
-            <li class="hall-item">Доверя́й, но проверя́й: SFI safety for native-compiled Wasm — Johnson et al., NDSS 2021</li>
-            <li class="hall-item">Retrofitting Fine Grain Isolation in the Firefox Renderer — Narayan et al., USENIX Security 2020</li>
-            <li class="hall-item">Network Reconnaissance and Vulnerability Excavation of Secure DDS Systems — White et al., SSIoT 2019</li>
-            <li class="hall-item">FaCT: A Flexible, Constant-Time Programming Language — Cauligi et al., SecDev 2017</li>
-            <li class="hall-item">On the (In)effectiveness of Mosaicing and Blurring as Tools for Document Redaction — Hill et al., PETS 2016</li>
-            <li class="hall-item">Fast and Vulnerable: A Story of Telematic Failures — Foster et al., WOOT 2015</li>
-            <li class="hall-item">Are AES x86 Cache Timing Attacks Still Feasible? — Mowery et al., CCSW 2012</li>
-            <li class="hall-item">When Good Services Go Wild — Lu et al., USENIX HotSec 2012</li>
-            <li class="hall-item">Heat of the Moment: Thermal Camera-Based Attacks — Mowery et al., WOOT 2011</li>
-            <li class="hall-item">Extracting Device Fingerprints from Flash Memory — Prabhu et al., TRUST 2011</li>
-            <li class="hall-item">Privacy-preserving Network Forensics — Afanasyev et al., CACM 2011</li>
-            <li class="hall-item">Got Traffic? An Evaluation of Click Traffic Providers — Zhang et al., WebQuality 2011</li>
-            <li class="hall-item">Neon: System Support for Derived Data Management — Zhang et al., VEE 2010</li>
-            <li class="hall-item">When Good Instructions Go Bad: Generalizing Return-Oriented Programming to RISC — Buchanan et al., CCS 2008</li>
-            <li class="hall-item">Reconsidering Physical Key Secrecy: Teleduplication via Optical Decoding — Laxton et al., CCS 2008</li>
-          </ul>
-        </div>
-      </details>
-
+      <p class="course-desc">[Course description placeholder — replace with a brief abstract describing the goals, topics, and format of this course.]</p>
+      <a href="teaching/cse88-fa26.html" class="btn btn-outline">View Syllabus →</a>
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════════════════
-       CSE 290/191 — AI News Roundup
-       ══════════════════════════════════════════════════════ -->
-  <div class="course-card" style="margin-bottom:72px;">
+  <!-- CSE 194 -->
+  <div class="course-card">
     <div class="course-header">
       <div>
-        <div class="course-code">CSE 191/290</div>
-        <div class="course-title">AI News Roundup</div>
-        <div class="course-meta">Winter 2026 &nbsp;·&nbsp; Wednesdays, 9:00–10:20am &nbsp;·&nbsp; EBU3B 4140</div>
+        <div class="course-code">CSE 194</div>
+        <div class="course-title">[Course Title Placeholder]</div>
       </div>
-      <span class="badge">Seminar</span>
+      <span class="badge">Active</span>
     </div>
     <div class="course-body">
-      <p class="course-desc">
-        A discussion- and presentation-based AI news roundup. Each week, participants take turns presenting and leading discussion on AI-related news, research, tools, or developments they find timely, interesting, and worth examining. The scope of AI is intentionally broad, allowing participants to bring in perspectives from their own disciplines and areas of expertise.
-      </p>
-      <p class="course-desc">
-        The goal is to help participants become more informed about how AI is shaping both the world and academic research. The class is designed as a supportive space to learn, ask questions, and explore ideas together. Presentations may take the form of news summaries, research discussions, demos, or hands-on workshops.
-      </p>
-
-      <div class="course-details">
-        <div class="detail-item">
-          <div class="detail-label">Instructor</div>
-          <div class="detail-value">Imani Munyaka, PhD</div>
-        </div>
-        <div class="detail-item">
-          <div class="detail-label">Office Hours</div>
-          <div class="detail-value">TBA</div>
-        </div>
-        <div class="detail-item">
-          <div class="detail-label">Discussion</div>
-          <div class="detail-value">Piazza</div>
-        </div>
-      </div>
-
-      <div class="divider" style="margin: 20px 0;"></div>
-
-      <div class="section-label">Evaluation</div>
-      <div class="eval-grid">
-        <div class="eval-item">
-          <div class="eval-pct">35%</div>
-          <div class="eval-label">Presentation</div>
-        </div>
-        <div class="eval-item">
-          <div class="eval-pct">65%</div>
-          <div class="eval-label">Attendance</div>
-        </div>
-      </div>
-      <p style="font-size:13px; color:var(--muted); margin-bottom:20px;">
-        Each participant presents at least once (slides required, max groups of 10). Attendance of at least 70% of meetings required for full credit.
-        <a href="https://docs.google.com/spreadsheets/d/1jzWHhqqcvSOzQmp60vH2MBdkUIXadVeyvr8zCWdVXQk/edit?usp=sharing" class="text-link" target="_blank">Sign up to present →</a>
-      </p>
-
-      <details>
-        <summary>Weekly Schedule</summary>
-        <div class="details-body">
-          <table class="schedule-table">
-            <thead><tr><th>Date</th><th>Topic</th><th>Presenter(s)</th></tr></thead>
-            <tbody>
-              <tr><td>Wed Jan 7</td><td>Intro · AI &amp; Cognitive Decline</td><td>Imani Munyaka</td></tr>
-              <tr><td>Wed Jan 14</td><td>TBD</td><td>TBD</td></tr>
-              <tr><td>Wed Jan 21</td><td>TBD</td><td>TBD</td></tr>
-              <tr><td>Wed Jan 28</td><td>TBD</td><td>TBD</td></tr>
-              <tr><td>Wed Feb 4</td><td>TBD</td><td>TBD</td></tr>
-              <tr><td>Wed Feb 11</td><td>TBD</td><td>TBD</td></tr>
-              <tr><td>Wed Feb 18</td><td>TBD</td><td>TBD</td></tr>
-              <tr><td>Wed Feb 25</td><td>TBD</td><td>TBD</td></tr>
-              <tr><td>Wed Mar 4</td><td>TBD</td><td>TBD</td></tr>
-              <tr><td>Wed Mar 11</td><td>TBD</td><td>TBD</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </details>
-
+      <p class="course-desc">[Course description placeholder — replace with a brief abstract describing the goals, topics, and format of this course.]</p>
+      <a href="teaching/cse194-fa26.html" class="btn btn-outline">View Syllabus →</a>
     </div>
+  </div>
+
+  <!-- CSE 216 -->
+  <div class="course-card" style="margin-bottom:48px;">
+    <div class="course-header">
+      <div>
+        <div class="course-code">CSE 216</div>
+        <div class="course-title">[Course Title Placeholder]</div>
+      </div>
+      <span class="badge">Active</span>
+    </div>
+    <div class="course-body">
+      <p class="course-desc">[Course description placeholder — replace with a brief abstract describing the goals, topics, and format of this course.]</p>
+      <a href="teaching/cse216-fa26.html" class="btn btn-outline">View Syllabus →</a>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ════════════════════════════════════════════════════════
+       PAST COURSES ARCHIVE
+       ════════════════════════════════════════════════════════ -->
+  <div class="section-label" style="margin-bottom:28px;">Past Courses</div>
+
+  <!-- Winter 2026 -->
+  <div class="term-block">
+    <div class="term-label">Winter 2026</div>
+    <ul class="course-archive-list">
+      <li><a href="teaching/cse227-wi26.html">CSE 227 — Graduate Computer Security</a></li>
+      <li><a href="teaching/cse191-wi26.html">CSE 191/290 — AI News Roundup</a></li>
+    </ul>
+  </div>
+
+  <!-- Fall 2025 -->
+  <div class="term-block">
+    <div class="term-label">Fall 2025</div>
+    <ul class="course-archive-list">
+      <li>CSE 194/291 — Race, Gender &amp; Computing / AI &amp; Society</li>
+      <li>CSE 216 — Interaction Design</li>
+    </ul>
+  </div>
+
+  <!-- Winter 2025 -->
+  <div class="term-block">
+    <div class="term-label">Winter 2025</div>
+    <ul class="course-archive-list">
+      <li>CSE 227 — Graduate Computer Security</li>
+      <li>CSE 191/290 — AI News Roundup</li>
+    </ul>
+  </div>
+
+  <!-- Fall 2024 -->
+  <div class="term-block">
+    <div class="term-label">Fall 2024</div>
+    <ul class="course-archive-list">
+      <li>CSE 194 — Race, Gender &amp; Computing</li>
+      <li>CSE 216 — Interaction Design</li>
+    </ul>
+  </div>
+
+  <!-- Winter 2024 -->
+  <div class="term-block">
+    <div class="term-label">Winter 2024</div>
+    <ul class="course-archive-list">
+      <li>CSE 127 — Intro to Computer Security</li>
+      <li>CSE 291 — Usable Security &amp; Privacy</li>
+    </ul>
+  </div>
+
+  <!-- Fall 2023 -->
+  <div class="term-block">
+    <div class="term-label">Fall 2023</div>
+    <ul class="course-archive-list">
+      <li><a href="https://sites.google.com/ucsd.edu/cse194-f23/home" target="_blank" rel="noopener">CSE 194 — Race, Gender &amp; Computing</a></li>
+      <li>CSE 229 — Security Seminar</li>
+    </ul>
+  </div>
+
+  <!-- Winter 2023 -->
+  <div class="term-block">
+    <div class="term-label">Winter 2023</div>
+    <ul class="course-archive-list">
+      <li><a href="https://canvas.ucsd.edu/courses/42485" target="_blank" rel="noopener">CSE 229c — Security Seminar</a></li>
+    </ul>
+  </div>
+
+  <!-- Fall 2022 -->
+  <div class="term-block">
+    <div class="term-label">Fall 2022</div>
+    <ul class="course-archive-list">
+      <li>CSE 194 — Race, Gender &amp; Computing</li>
+      <li>CSE 291-6 — Usable Security &amp; Privacy</li>
+    </ul>
+  </div>
+
+  <!-- Winter 2022 -->
+  <div class="term-block">
+    <div class="term-label">Winter 2022</div>
+    <ul class="course-archive-list">
+      <li>CSE 194 — Race, Gender &amp; Computing</li>
+    </ul>
+  </div>
+
+  <!-- Fall 2021 -->
+  <div class="term-block" style="margin-bottom:72px;">
+    <div class="term-label">Fall 2021</div>
+    <ul class="course-archive-list">
+      <li>CSE 292 — Faculty Research Seminar</li>
+      <li>CSE 291-6 — Usable Security &amp; Privacy</li>
+    </ul>
   </div>
 
 </div>
