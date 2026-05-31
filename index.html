@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dr. Imani N. S. Munyaka</title>
+  <meta name="description" content="Dr. Imani N. S. Munyaka — Assistant Professor at UC San Diego, User Experience Researcher focused on Privacy & Security."/>
+  <link rel="icon" href="assets/profile.png"/>
+  <link rel="stylesheet" href="assets/style.css"/>
+  <style>
+    .about-grid {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 48px;
+      align-items: start;
+      padding: 56px 0 48px;
+    }
+
+    .profile-photo {
+      width: 220px; height: 220px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 3px solid var(--green);
+      display: block;
+    }
+
+    .profile-name {
+      font-size: 36px; font-weight: 800;
+      color: var(--black); line-height: 1.1;
+      margin-bottom: 6px;
+    }
+
+    .profile-title {
+      font-size: 15px; font-weight: 600;
+      color: var(--green-dark);
+      margin-bottom: 4px;
+    }
+
+    .profile-dept {
+      font-size: 14px; color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .profile-bio {
+      font-size: 14px; color: var(--muted);
+      line-height: 1.85; margin-bottom: 20px;
+    }
+
+    .profile-links {
+      display: flex; flex-wrap: wrap; gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .profile-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; font-weight: 600;
+      color: var(--green-dark); text-decoration: none;
+      padding: 6px 14px;
+      border: 1.5px solid var(--border-green);
+      border-radius: 6px;
+      background: rgba(125,216,85,0.07);
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .profile-link:hover {
+      background: var(--green);
+      color: var(--black);
+      border-color: var(--green);
+    }
+    .profile-link:focus-visible { outline: 2px solid var(--green-dark); outline-offset: 3px; }
+
+    .office-hours {
+      font-size: 13px; color: var(--muted);
+      padding: 12px 16px;
+      background: rgba(125,216,85,0.08);
+      border-left: 3px solid var(--green);
+      border-radius: 0 6px 6px 0;
+      margin-bottom: 0;
+    }
+    .office-hours a { color: var(--green-dark); text-decoration: underline; }
+
+    /* interests grid */
+    .interests-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 10px;
+      margin-bottom: 48px;
+    }
+
+    .interest-tag {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 13px; font-weight: 600;
+      color: var(--black);
+      display: flex; align-items: center; gap: 8px;
+      transition: border-color 0.2s;
+    }
+    .interest-tag::before {
+      content: '';
+      width: 8px; height: 8px;
+      background: var(--green);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .interest-tag:hover { border-color: var(--green); }
+
+    /* affiliations */
+    .affiliations-block {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 28px 32px;
+      background: var(--white);
+      margin-bottom: 72px;
+    }
+
+    @media (max-width: 640px) {
+      .about-grid { grid-template-columns: 1fr; gap: 24px; }
+      .profile-photo { width: 140px; height: 140px; }
+      .profile-name { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="nav-logo-dot"></span>
+      Dr. Munyaka
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">About</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+      <li><a href="prospective.html">Prospective Students</a></li>
+      <li><a href="https://ujimasp.com" target="_blank" rel="noopener">Ujima Lab ↗</a></li>
+      <li><a href="community.html">Community</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="main-content">
+<div class="page-wrap">
+
+  <!-- ─── Hero / Profile ──────────────────────────────────── -->
+  <div class="about-grid">
+
+    <div>
+      <img src="assets/profile.png" alt="Dr. Imani N. S. Munyaka" class="profile-photo"/>
+    </div>
+
+    <div>
+      <div class="profile-name">Dr. Imani N. S. Munyaka</div>
+      <div class="profile-title">Assistant Professor</div>
+      <div class="profile-dept">Computer Science &amp; Engineering · UC San Diego · Room 3220, CSE Building · La Jolla, CA</div>
+
+      <p class="profile-bio">
+        I'm a User Experience Researcher focused on Privacy &amp; Security. I lead the <a href="https://ujimasp.com" class="text-link">Ujima Security &amp; Privacy Research Lab</a> at UC San Diego, where we work to improve the security and privacy experiences of those most vulnerable.
+      </p>
+      <p class="profile-bio">
+        I received my Ph.D. in Human-Centered Computing from the University of Florida, where I was a member of the Florida Institute for Cybersecurity Research and the Human Experience Research Lab, advised by Dr. Juan Gilbert and Dr. Patrick Traynor. I hold a B.S. in Electrical Engineering from the University of Dayton and an M.S. in Computer Science from Kentucky State University.
+      </p>
+
+      <div class="profile-links">
+        <a href="https://scholar.google.com/citations?user=qc6CJjYAAAAJ" target="_blank" rel="noopener" class="profile-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+          Google Scholar
+        </a>
+        <a href="mailto:drmunyaka@ucsd.edu" class="profile-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          drmunyaka@ucsd.edu
+        </a>
+        <a href="https://calendly.com/drmunyakahcc/public-office-hours" target="_blank" rel="noopener" class="profile-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Office Hours
+        </a>
+        <a href="https://cseweb.ucsd.edu/~drmunyaka/" target="_blank" rel="noopener" class="profile-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          UCSD Faculty Page
+        </a>
+      </div>
+
+      <div class="office-hours">
+        📅 Public office hours available via <a href="https://calendly.com/drmunyakahcc/public-office-hours" target="_blank" rel="noopener">Calendly</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="divider-green"></div>
+
+  <!-- ─── Research Interests ──────────────────────────────── -->
+  <div class="section-label" style="margin-bottom:16px;">Research Interests</div>
+  <div class="interests-grid" >
+    <div class="interest-tag">Privacy &amp; Security</div>
+    <div class="interest-tag">Public Policy</div>
+    <div class="interest-tag">Voting Technologies</div>
+    <div class="interest-tag">Security Education</div>
+    <div class="interest-tag">Cybersecurity</div>
+    <div class="interest-tag">Accessibility</div>
+    <div class="interest-tag">Minorities in STEM</div>
+    <div class="interest-tag">Human-Centered Computing</div>
+    <div class="interest-tag">AI &amp; Society</div>
+  </div>
+
+  <div class="divider-green"></div>
+
+  <!-- ─── Affiliations ────────────────────────────────────── -->
+  <div class="section-label" style="margin-bottom:16px;">Affiliations</div>
+  <div class="affiliations-block">
+    <p style="font-size:13px; color:var(--muted-2); font-style:italic;">
+      Affiliations coming soon.
+      <!-- Add affiliations here — e.g.:
+      <ul style="list-style:none; display:flex; flex-direction:column; gap:10px; margin-top:12px;">
+        <li style="font-size:14px; color:var(--muted);">UC San Diego, Department of Computer Science & Engineering</li>
+        <li style="font-size:14px; color:var(--muted);">Florida Institute for Cybersecurity Research (alumni)</li>
+      </ul>
+      -->
+    </p>
+  </div>
+
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-text">© 2026 Imani N. S. Munyaka · UC San Diego · <a href="mailto:drmunyaka@ucsd.edu">drmunyaka@ucsd.edu</a></div>
+    <ul class="footer-links">
+      <li><a href="index.html">About</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+      <li><a href="prospective.html">Prospective Students</a></li>
+      <li><a href="https://ujimasp.com" target="_blank" rel="noopener">Ujima Lab</a></li>
+      <li><a href="community.html">Community</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>
